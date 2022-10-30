@@ -5,7 +5,13 @@ module.exports = {
 	    fontFamily: {
 	        "main": ["JetBrains Mono", "monospace"],
 	    },
-		extend: {},
+		extend: {
+	        colors: {
+	            "dark": "#010713",
+	            "light": "#F6F6F6"
+	        },
+		},
 	},
+	darkMode: "class",
 	plugins: [],
 }

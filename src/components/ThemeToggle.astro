@@ -1,0 +1,30 @@
+<label class="relative w-12 h-6 rounded-full outline outline-2 outline-dark dark:outline-light select-none cursor-pointer">
+    <input type="checkbox" id="toggle-theme" class="hidden peer select-none">
+    <span class="absolute w-full h-full rounded-full before:absolute before:rounded-full before:top-1/2 before:left-[0.20rem] before:w-[1.2rem] before:h-[1.2rem] before:bg-dark dark:before:bg-light before:-translate-y-1/2 peer-checked:translate-x-[1.4rem] transition-transform duration-300 select-none"></span>
+</label>
+
+<script>
+    const checkbox = document.getElementById("toggle-theme") as HTMLInputElement;
+    const html = document.querySelector("html") as HTMLElement;
+
+    if (localStorage.jnprTheme === 'dark' || (!('jnprTheme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        localStorage.setItem("jnprTheme", "dark");
+        html.classList.add('dark')
+        checkbox.checked = true;
+    } else {
+        localStorage.setItem("jnprTheme", "light");
+        html.classList.remove('dark')
+        checkbox.checked = false;
+    }
+
+    checkbox.onclick = () => {
+        if (checkbox.checked) {
+            localStorage.setItem("jnprTheme", "dark");
+            html.classList.add("dark");
+        } else if (html.classList.contains("dark")) {
+            localStorage.setItem("jnprTheme", "light");
+            html.classList.remove("dark");
+        }
+    }
+</script>
+
