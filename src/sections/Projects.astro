@@ -1,0 +1,37 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+---
+<main id="projects" class="text-sm bg-light2 dark:bg-dark2 sm:text-lg">
+	<div class="max-w-5xl mx-auto p-7 flex flex-col justify-start gap-7 sm:p-12">
+		<h1 class="text-3xl sm:text-4xl md:text-5xl">Projects</h1>
+		<div class="w-full flex justify-start gap-7 flex-col sm:p-12">
+
+			<ProjectCard 
+				imgSrc="memory-card-game.png" 
+				imgAlt="picture of memory card game website" 
+				title="Memory Card Game"
+				description="A Rick and Morty themed memory card game where the only rule is to not click on the same character card twice."
+				tags="HTML, JavaScript, React, TailwindCSS"
+				github="https://github.com/JonPeeAir/memory-card-game"
+				preview="https://jonpeeair.github.io/memory-card-game/"
+			/>
+
+			<ProjectCard 
+				imgSrc="battleship.png" 
+				imgAlt="picture of battleship game website" 
+				title="Battleship"
+				description="A recreation of the popular Battleship game. Battleship is a strategy type guessing game where two players take turns taking shots at each others' boards. The first player to wipe out their opponent's ships is the winner."
+				tags="HTML, CSS, JavaScript, Jest"
+				github="https://github.com/JonPeeAir/battleship"
+				preview="https://jonpeeair.github.io/battleship/"
+			/>
+
+		</div>
+	</div>
+</main>
+
+<style>
+
+
+
+</style>
