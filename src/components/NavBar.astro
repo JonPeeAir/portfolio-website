@@ -2,42 +2,52 @@
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<nav class="sticky top-9 mt-10 flex items-center justify-between">
+<nav class="sticky top-0 left-0 right-0 z-50  bg-light/75 dark:bg-dark/75">
+  <div class="mx-auto p-9 max-w-5xl flex items-center justify-between sm:px-12">
+    <a id="logo" href="#" class="font-main font-black text-3xl">JNPR</a>
 
-	<a href="#" class="font-main font-black text-3xl ">JNPR</a>
+    <button id="nav-menu" class="group peer relative w-8 h-6 z-40 scale-75 sm:hidden">
+      <span class="absolute w-4/6 h-[0.2rem] left-0 top-0 bg-dark dark:bg-light transition-transform group-[.is-open]:translate-y-3 group-[.is-open]:scale-0"></span>
+      <span class="absolute w-full h-[0.2rem] left-0 top-1/2 -translate-y-1/2 bg-dark transition-transform dark:bg-light group-[.is-open]:rotate-45"></span>
+      <span class="absolute w-full h-[0.2rem] left-0 top-1/2 -translate-y-1/2 bg-dark transition-transform dark:bg-light group-[.is-open]:-rotate-45"></span>
+      <span class="absolute w-5/6 h-[0.2rem] left-0 bottom-0 bg-dark dark:bg-light transition-transform group-[.is-open]:-translate-y-3 group-[.is-open]:scale-0"></span>
+	  </button>
 
-	<button id="nav-menu" class="group relative w-8 h-6">
-		<span class="absolute w-4/6 h-[0.2rem] left-0 top-0 bg-dark dark:bg-light transition-transform group-[.is-open]:translate-y-3 group-[.is-open]:scale-0"></span>
-		<span class="absolute w-full h-[0.2rem] left-0 top-1/2 -translate-y-1/2 bg-dark transition-transform dark:bg-light group-[.is-open]:rotate-45"></span>
-		<span class="absolute w-full h-[0.2rem] left-0 top-1/2 -translate-y-1/2 bg-dark transition-transform dark:bg-light group-[.is-open]:-rotate-45"></span>
-		<span class="absolute w-5/6 h-[0.2rem] left-0 bottom-0 bg-dark dark:bg-light transition-transform group-[.is-open]:-translate-y-3 group-[.is-open]:scale-0"></span>
-	</button>
+	  <div class="fixed w-full h-full top-full left-0 flex flex-col items-center bg-light opacity-0 transition-[opacity,transform] duration-500 peer-[.is-open]:-translate-y-[100%] peer-[.is-open]:opacity-100 dark:bg-dark 
+      sm:opacity-100 sm:relative sm:bg-light/0 sm:flex-row sm:gap-7 sm:justify-end sm:peer-[.is-open]:-translate-y-[0%] 
+      dark:sm:bg-dark/0">
 
-	<div class="fixed top-28 bottom-0 left-0 right-0 flex flex-col items-center bg-red-500/0">
-		<hr class="w-10/12 border">
-		<ul class="my-20 text-center font-medium text-3xl flex flex-col gap-7">
-			<li>
-				<a href="#">About</a>
-			</li>
-			<li>
-				<a href="#">Projects</a>
-			</li>
-			<li>
-				<a href="#">Contact</a>
-			</li>
-		</ul>
-		<ThemeToggle />
-	</div>
+      <ul id="nav-list"class="mt-44 mb-20 text-center font-medium text-3xl flex flex-col gap-7 sm:flex-row sm:my-0 sm:text-xl">
+        <li class="decoration-2 decoration-dotted underline-offset-8 hover:underline">
+	        <a href="#home">Home</a>
+        </li>
+        <li class="decoration-2 decoration-dotted underline-offset-8 hover:underline">
+	        <a href="#about">About</a>
+        </li>
+        <li class="decoration-2 decoration-dotted underline-offset-8 hover:underline">
+          <a href="#education">Education</a>
+        </li>
+        <li class="decoration-2 decoration-dotted underline-offset-8 hover:underline">
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
 
+		  <ThemeToggle />
+	  </div>
+  </div>
 </nav>
 
 <script>
 
-const navMenu = document.getElementById("nav-menu") as HTMLButtonElement;
+	const navMenu = document.getElementById("nav-menu") as HTMLButtonElement;
+	const navLinks = Array.from(document.querySelectorAll("#nav-list a")) as HTMLAnchorElement[];
 
-navMenu.onclick = () => {
-	navMenu.classList.toggle("is-open");
-}
+	function toggleMenu() {
+	  navMenu.classList.toggle("is-open");
+	}
+
+	navMenu.onclick = toggleMenu;
+	navLinks.forEach(link => link.onclick = toggleMenu);
 
 </script>
 
