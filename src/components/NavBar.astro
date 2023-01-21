@@ -2,7 +2,7 @@
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<nav class="sticky top-0 left-0 right-0 z-50  bg-light/75 dark:bg-dark/75">
+<nav class="sticky top-0 left-0 right-0 z-50 transition-[top] duration-200 bg-light/75 dark:bg-dark/75">
   <div class="mx-auto p-9 max-w-5xl flex items-center justify-between sm:px-12">
     <a id="logo" href="#" class="font-main font-black text-3xl">JNPR</a>
 
@@ -39,15 +39,28 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 <script>
 
+ 
+  const nav = document.querySelector("nav") as HTMLDivElement;
 	const navMenu = document.getElementById("nav-menu") as HTMLButtonElement;
 	const navLinks = Array.from(document.querySelectorAll("#nav-list a")) as HTMLAnchorElement[];
 
 	function toggleMenu() {
 	  navMenu.classList.toggle("is-open");
 	}
-
 	navMenu.onclick = toggleMenu;
 	navLinks.forEach(link => link.onclick = toggleMenu);
+
+  // Hide navbar when scrolling down. Show navbar when scrolling up
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = () => {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      nav.style.top = "0";
+    } else {
+      nav.style.top = "-100%";
+    }
+    prevScrollpos = currentScrollPos;
+  } 
 
 </script>
 
