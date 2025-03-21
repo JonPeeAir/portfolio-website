@@ -2,16 +2,17 @@
 interface Props {
     type: string;
     label?: string;
+    className?: string;
 }
-const { type, label } = Astro.props;
+const { type, label, className } = Astro.props;
 
 import Logo from './Logo.astro';
 ---
 
-<Logo 
-    type={type} 
-    label={label} 
-    divClass="mb-2" 
-    logoClass="w-16 h-16 mx-auto dark:mix-blend-luminosity md:w-20 md:h-20 lg:w-24 lg:h-24"
+<Logo
+    type={type}
+    label={label}
+    divClass="mb-2"
+    logoClass={"w-16 h-16 mx-auto dark:mix-blend-luminosity md:w-20 md:h-20 lg:w-24 lg:h-24 " + className}
 />
 
