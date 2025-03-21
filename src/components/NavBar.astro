@@ -13,13 +13,17 @@ import ThemeToggle from "./ThemeToggle.astro";
       <span class="absolute w-5/6 h-[0.2rem] left-0 bottom-0 bg-dark dark:bg-light transition-transform group-[.is-open]:-translate-y-3 group-[.is-open]:scale-0"></span>
 	  </button>
 
-	  <div class="fixed w-full h-full top-full left-0 flex flex-col items-center bg-light opacity-0 transition-[opacity,transform] duration-500 peer-[.is-open]:-translate-y-[100%] peer-[.is-open]:opacity-100 dark:bg-dark 
-      sm:opacity-100 sm:relative sm:bg-light/0 sm:flex-row sm:gap-7 sm:justify-end sm:peer-[.is-open]:-translate-y-[0%] 
-      dark:sm:bg-dark/0">
-
-      <ul id="nav-list"class="mt-44 mb-20 text-center font-medium text-3xl flex flex-col gap-7 sm:flex-row sm:my-0 sm:text-xl">
+    <div class="fixed w-screen h-screen top-full left-0 flex flex-col gap-7
+      justify-center items-center bg-light opacity-0
+      transition-[opacity,transform] duration-500
+      peer-[.is-open]:-translate-y-[100%] peer-[.is-open]:opacity-100
+      dark:bg-dark sm:w-full sm:h-full sm:opacity-100 sm:relative sm:bg-light/0
+      sm:flex-row sm:gap-7 sm:justify-end sm:peer-[.is-open]:-translate-y-[0%]
+      dark:sm:bg-dark/0
+    ">
+      <ul id="nav-list"class="text-center font-medium text-3xl flex flex-col gap-7 sm:flex-row sm:my-0 sm:text-xl">
         <li class="decoration-2 decoration-dotted underline-offset-8 hover:underline">
-	        <a href="#home">Home</a>
+	        <a href="#home">Homee</a>
         </li>
         <li class="decoration-2 decoration-dotted underline-offset-8 hover:underline">
 	        <a href="#about">About</a>
@@ -34,7 +38,6 @@ import ThemeToggle from "./ThemeToggle.astro";
           <a href="#contact">Contact</a>
         </li>
       </ul>
-
 		  <ThemeToggle />
 	  </div>
   </div>
@@ -42,7 +45,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 <script>
 
- 
+
   const nav = document.querySelector("nav") as HTMLDivElement;
 	const navMenu = document.getElementById("nav-menu") as HTMLButtonElement;
 	const navLinks = Array.from(document.querySelectorAll("#nav-list a")) as HTMLAnchorElement[];
@@ -63,7 +66,7 @@ import ThemeToggle from "./ThemeToggle.astro";
       nav.style.top = "-100%";
     }
     prevScrollpos = currentScrollPos;
-  } 
+  }
 
 </script>
 
