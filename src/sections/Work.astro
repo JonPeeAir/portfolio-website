@@ -1,0 +1,43 @@
+---
+import WorkCard from "../components/WorkCard.astro";
+---
+<main id="work" class="text-sm bg-light2 scroll-mt-28 dark:bg-dark2 sm:text-lg">
+	<div class="mx-auto p-7 max-w-5xl flex flex-col justify-start gap-7 sm:p-12">
+	  <h1 class="text-3xl sm:text-4xl md:text-5xl">Work Experience</h1>
+
+    <WorkCard
+      imgSrc="par-logo.png"
+      imgAlt="PAR Logo"
+      title="Software Engineer"
+      company="PAR Technology"
+      date="Jan 2024 - Apr 2024"
+      tags="Angular, TailwindCSS, Java, Hibernate, Dropwizard, MySQL"
+    >
+      <li>Developed and maintained the cloud-based PixelPoint solution (PixelPointHQ) using Angular, TailwindCSS, Java, Hibernate, and Dropwizard.</li>
+      <li>Helped develop the frontend of a crucial price change feature in PixelPointHQ, allowing 10k+ restaurant owners to effortlessly update their POS item prices.</li>
+      <li>Suggested and led the TypeScript adoption in our frontend codebase, reducing bugs by 30% and enhancing maintainability.</li>
+      <li>Identified and eliminated usesless logs in production, reducing our AWS cloud costs by 10%.</li>
+      <li>Resolved numerous bugs (20+), enhancing application stability and user experience.</li>
+      <li>Collaborated with diverse teams following Agile methodology.</li>
+    </WorkCard>
+
+
+    <WorkCard
+      imgSrc="par-logo.png"
+      imgAlt="PAR Logo"
+      title="QA Automation Engineer"
+      company="PAR Technology"
+      date="May 2023 - Dec 2023"
+      tags="Test Complete, Selenium, .NET, Jenkins"
+    >
+      <li>Executed and evaluated 100+ manual test cases, reporting test results.</li>
+      <li>Automated 100+ test cases using Test Complete and Selenium (.NET).</li>
+      <li>Wrote and executed SQL statements during testing.</li>
+      <li>Fully documented unexpected anomalies and defects with instructions on how to recreate each.</li>
+      <li>Developed and presented a new practice to the team that makes our test logs easier to read and skim through speeding up our regression runs by 20%.</li>
+    </WorkCard>
+
+
+	</div>
+</main>
+
